@@ -1,0 +1,20 @@
+<div class="container text-center" ng-hide="myinfo.isUserRegistered">
+  <h1>Please, <a ui-sref="public.signup">click here</a> and Sign up first ! </h1>
+  <br><br>
+</div>
+
+<div class="container" ng-show="myinfo.isUserRegistered">
+  <h1>Profil informations </h1>
+    <p>First Name: {{myinfo.user.firstName}}</p>
+    <p>Last Name: {{myinfo.user.lastName}}</p>
+    <p>Phone Number: {{myinfo.user.phone}}</p>
+    <p>Email Address: {{myinfo.user.email}}</p>
+    <p>Favorite Item Short name: {{myinfo.user.dish}}</p>
+    <p>Favorite Item Name: {{myinfo.user.favoriteItemDetails.name}}</p>
+    <p>Favorite Item description: {{myinfo.user.favoriteItemDetails.description}}</p>
+    <div id="image">
+        <img class="img-responsive"
+        ng-src="images/menu/L/L.jpg"
+        alt="{{myinfo.user.favoriteItemDetails.name}}" />
+    </div>
+</div>

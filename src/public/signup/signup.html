@@ -1,0 +1,47 @@
+<div class="container">
+  <h1 class="text-center">Sign up for our newsletter! </h1>
+  <br>
+      <form class="col-md-4 col-md-offset-4" name='signupForm' novalidate ng-submit="signupCtrl.submit(signupForm);">
+        <input type="text" class="form-control lg-6" name="firstname" placeholder="First name"
+          ng-model="signupCtrl.firstname"
+          required>
+          <span class="alert-danger" ng-show="signupForm.firstname.$error.required &&
+             (!signupForm.firstname.$pristine || signupForm.$submitted)">Please enter your first name.</span>
+          <br>
+          <input type="text" class="form-control" name="lastname" placeholder="Last name"
+            ng-model="signupCtrl.lastname"
+            required>
+            <span class="alert-danger" ng-show="signupForm.lastname.$error.required &&
+             (!signupForm.lastname.$pristine || signupForm.$submitted)">Please enter your last name.</span>
+            <br>
+
+        <input type="email" class="form-control" name="email" placeholder="Email"
+          ng-model="signupCtrl.email"
+          required>
+          <span class="alert-danger" ng-show="signupForm.email.$error.required &&
+             (!signupForm.email.$pristine || signupForm.$submitted)">Please enter an email address.</span>
+          <span class="alert-danger" ng-show="signupForm.email.$invalid && signupForm.email.$touched">Please enter a valid email address.</span>
+          <br>
+
+        <input type="text" class="form-control" name="phone" placeholder="Phone ###-###-####"
+          ng-model="signupCtrl.phone" required>
+          <span class="alert-danger" ng-show="signupForm.phone.$error.required &&
+             (!signupForm.phone.$pristine || signupForm.$submitted)">Please enter a phone number.</span>
+          <span class="alert-danger" ng-show="signupForm.phone.$invalid && signupForm.phone.$touched">Please enter a valid phone number.</span>
+          <br>
+
+          <input type="text" class="form-control" name="dish" placeholder="Number of your favorite dish"
+            ng-model="signupCtrl.dish"
+            required>
+            <span class="alert-danger" ng-show="signupForm.dish.$error.required &&
+             (!signupForm.dish.$pristine || signupForm.$submitted)">Please enter your favorite dish.</span>
+             <span class="alert-danger" ng-show="signupCtrl.showError">Invalid short Name!</span>
+            <br>
+          <div class="text-center">
+            <button class="btn btn-success" type="submit" required>Sign up</button>
+              <span class="alert-success text-center"
+                ng-show="signupCtrl.showMessage">Information has been saved!</span>
+          </div>
+      </form>
+
+  </div>
